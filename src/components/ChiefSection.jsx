@@ -43,7 +43,7 @@ export default function  ChiefSection() {
     return(
         <div className={"section chiefs"}>
                <h1 className="title">
-                   top
+                   top Chiefs
                </h1>
             <div className="top-chiefs-container">
                 {chiefs.map(chief => <ChiefsCard key={chief.name} chief={chief}/> )}

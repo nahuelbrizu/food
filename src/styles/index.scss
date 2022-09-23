@@ -23,6 +23,7 @@
 body {
   font-size: var(--font-size);
   font-family: 'roboto', 'sans-serif';
+  padding-top: 55px;
 }
 
 a {
@@ -72,6 +73,7 @@ img {
 
 .section {
   display: flex;
+  flex-wrap: wrap ;
   align-items: center;
   margin-bottom: 3vw;
 
@@ -98,69 +100,56 @@ img {
 @import "partials/hero-section";
 @import "partials/improve-section";
 @import "partials/quote-section";
+@import "partials/section-chief";
+@import "partials/footer";
 
-
-
-.section.chiefs{
-    display: block;
-}
-.top-chiefs-container{
-  display: grid;
-  grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1.5em;
-  margin-top: 3em;
-}
-
-.chief-card{
-  display: flex;
-  height: 120px;
-  background-color: var(--background-color);
-  border-radius: 5px;
-  overflow: hidden;
-  img{
-    height: 100%;
-    width: 120px;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px var(--shadow-color);
-
+.previous-searches{
+  display: block;
+  h2{
+    color: var(--text-color);
+    margin-bottom: .5em;
   }
-  .chief-card-info{
-    height: 100%;
+  .previous-searches-container{
+    .search-item{
+      background-color: var(--primary-color);
+      display: inline-block;
+      padding: .5em;
+      margin: 0 1em 1.75em 0;
+      color: beige;
+      border-radius: 30px ;
+      box-shadow: 0 3px 6px var(--shadow-color);
+      opacity: 0;
+      animation: getAnimationDuration(.5s) slideInRight forwards;
+    }
+  }
+  .search-box{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: .5em;
-    padding-left: 1em;
-    .chief-card-name{
-      font-size: 1.2em;
-      font-weight: bold;
-      color: var(--text-color);
+    align-items: center;
+    justify-content: flex-end;
+    height: 35px;
+    input, .btn{
+      height: 35px;
     }
-    .chief-recipe-count, .chief-cuisine{
-      font-size: 1.2em;
-      color: var(--text-light);
+    input{
+      min-width: 250px;
+      padding: 0 .5em;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      border: 1px solid #4d4d4d;
     }
-    .chief-icons{
-      padding-left: .75em;
-      font-size: 1.2em;
-      svg{
-        margin-right: .5em;
-        &:nth-child(1){
-          color: #0063f7;
-        }
-        &:nth-child(2){
-          color: #131341;
-        }
-        &:nth-child(3){
-          color: #014d49;
-        }
-      }
+    .btn{
+      padding-block: 0;
+      padding-inline: .75em;
+      border-radius: 0 5px 5px 0;
     }
   }
 }
+
+
 
 .main {
   padding-block: 3vw;
+
 
 }
 
@@ -169,6 +158,17 @@ img {
 }
 
 @import "partials/animations";
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-inline: 18vw;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .container {
+    padding-inline: 12vw;
+  }
+}
+
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -180,7 +180,43 @@ img {
       display: block;
     }
   }
-  .chief-card{
-    box-shadow:  0 5px 10px var(--shadow-color);
+  .section{
+    .col{
+      width: 100%;
+      padding: 0 !important;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+  .skill-item{
+    display: inline-block;
+    margin: .75em;
+  }
+  .section.improve-skills .btn{
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .chief-card {
+    box-shadow: 0 5px 10px var(--shadow-color);
+  }
+  .container {
+    padding-inline: 6vw;
+  }
+  .footer{
+    grid-template-columns: repeat(4, 1fr);
+    .footer-section:nth-child(1){
+      grid-column: span 4;
+    }
+    .footer-section:nth-child(2), .footer-section:nth-child(3){
+      grid-column: span 2;
+    }
+  }
+
+}
+@media screen and (max-width: 480px) {
+  .container {
+    padding-inline: 3vw;
   }
 }
