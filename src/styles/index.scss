@@ -53,7 +53,7 @@ img {
 }
 
 .custom-img {
-  background-color: red;
+  background-color: #090956;
   height: 0;
   width: 100%;
   position: relative;
@@ -68,7 +68,6 @@ img {
   }
 }
 
-
 @import "partials/_navBar";
 
 .section {
@@ -76,7 +75,9 @@ img {
   flex-wrap: wrap ;
   align-items: center;
   margin-bottom: 3vw;
-
+   &.d-block{
+      display: block;
+    }
   .title {
     color: var(--text-color);
     font-size: 2.5em;
@@ -101,52 +102,59 @@ img {
 @import "partials/improve-section";
 @import "partials/quote-section";
 @import "partials/section-chief";
-@import "partials/footer";
+@import "partials/previous-search";
+@import "partials/recipes-section";
 
-.previous-searches{
-  display: block;
-  h2{
-    color: var(--text-color);
-    margin-bottom: .5em;
-  }
-  .previous-searches-container{
-    .search-item{
-      background-color: var(--primary-color);
-      display: inline-block;
-      padding: .5em;
-      margin: 0 1em 1.75em 0;
-      color: beige;
-      border-radius: 30px ;
-      box-shadow: 0 3px 6px var(--shadow-color);
-      opacity: 0;
-      animation: getAnimationDuration(.5s) slideInRight forwards;
-    }
-  }
-  .search-box{
+
+
+.option-container{
+  box-shadow: 0 5px 10px var(--shadow-color);
+  padding: 1em;
+  border-radius: 5px;
+  border-left: .5em solid var(--primary-color);
+  background-color: var(--background-color);
+  margin-top: 1em;
+  display: flex;
+  gap: 1em;
+  .option{
+    height: 3.5em;
+    width: 3.5em;
+    box-shadow: 0 3px 6px var(--shadow-color);
+    border-radius: 5px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
-    height: 35px;
-    input, .btn{
-      height: 35px;
+    &.light{
+      background-color: #fff;
     }
-    input{
-      min-width: 250px;
-      padding: 0 .5em;
-      border-radius: 5px 0 0 5px;
-      outline: none;
-      border: 1px solid #4d4d4d;
+    &.dark {
+    background-color: rgb(29, 29, 29) ;
     }
-    .btn{
-      padding-block: 0;
-      padding-inline: .75em;
-      border-radius: 0 5px 5px 0;
+    .check{
+      height: 2.5em;
+      width: 2.5em;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 2.5em;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      svg{
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+    .btn span{
+      display: inline-block;
+      margin-right: .5em;
     }
   }
 }
+.d-block h2{
+  font-size: 1.75em;
+}
 
 
-
+@import "partials/footer";
 .main {
   padding-block: 3vw;
 

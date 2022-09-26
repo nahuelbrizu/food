@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 export default function PreviosSearch({links, close}){
-    const searches = ["pizza", "burger", "cookies", "juice", "tacos", "salad", "ice cream", " soup", "pudding"];
+    const searches = ["pizza", "burger", "cookies", "juice", "tacos", "salad", "ice cream", " soup", "pudding", "Chicken", "soredo", "asado", "roverto"];
      return(
        <div className="" onClick={close} >
            <div className={"previous-searches section"}>

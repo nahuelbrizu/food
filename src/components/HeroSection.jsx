@@ -40,8 +40,8 @@ export default function HeroSection() {
                 <button className="btn">Explore Now</button>
             </div>
             <div className="col gallery">
-                {image.map((src, index) => {
-                    console.log(src.images)
+                {   image.map((src, index) => {
+                    console.log(src.images.url)
                     return src.images.length > 0 && (
                         <CustomImg key={index} imgSrc={src.images[0]} pt={"85%"}/>
                     )
