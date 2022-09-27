@@ -6,7 +6,7 @@ export default function Settings() {
     const [settings, setSettings] = useState({
         "--background-color": "#fff",
         "--background-light": "#fff",
-        "--primary-color": "#043a96",
+        "--primary-color": "rgb(29,70,211)",
         "--shadow-color": "rgba(0,0,0,0.2)",
         "--text-color": "#0A0A0A",
         "--text-light": "#575757",
@@ -38,12 +38,12 @@ export default function Settings() {
         }
     ]
 
-    function changeTheme(i) {
-        const _theme = [...themes[i]];
-        setTheme(i === 0 ? "light" : "dark");
-        let _settings = {...settings};
-        for (let key in _theme) {
-            _settings[key]= theme[key]
+    function changeTheme(i){
+        const _theme = {...themes[i]}
+        setTheme(i === 0 ? "light" : "dark")
+        let _settings = {...settings}
+        for(let key in _theme){
+            _settings[key] = _theme[key]
         }
         setSettings(_settings)
     }
@@ -75,8 +75,8 @@ export default function Settings() {
     const primaryColors = [
         "rgb(9,9,86)",
         "rgb(33, 150, 243)",
-        "rgb(154,134,39)",
-        "rgb(16,173,173)",
+        "rgb(255,0,10)",
+        "rgb(21,173,16)",
         "rgb(208,87,128)"
     ]
     const fontSizes = [
@@ -132,7 +132,7 @@ export default function Settings() {
                 </div>
 
                 <div className="section d-block">
-                    <h2>Primary Color</h2>
+                    <h2>Preferred Color</h2>
                     <div className="option-container">
                         {primaryColors.map((color, index) => (
                             <div className="option light" style={{backgroundColor: color}}  onClick={() => changeColor(index)}>

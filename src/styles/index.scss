@@ -24,6 +24,7 @@ body {
   font-size: var(--font-size);
   font-family: 'roboto', 'sans-serif';
   padding-top: 55px;
+  background-color: var(--background-light);
 }
 
 a {
@@ -112,7 +113,7 @@ img {
   padding: 1em;
   border-radius: 5px;
   border-left: .5em solid var(--primary-color);
-  background-color: var(--background-color);
+  background-color: var(--background-light);
   margin-top: 1em;
   display: flex;
   gap: 1em;
@@ -151,6 +152,7 @@ img {
 }
 .d-block h2{
   font-size: 1.75em;
+  color: var(--text-color);
 }
 
 
